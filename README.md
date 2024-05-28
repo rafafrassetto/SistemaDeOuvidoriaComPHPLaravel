@@ -26,12 +26,12 @@ Este é um projeto de exemplo de um sistema de e-commerce simples desenvolvido u
 ```bash
 git clone https://github.com/rafafrassetto/Sistema_ECommerce_Com_PHP.git
 cd Sistema_ECommerce_Com_PHP
-
+```
 ## Passo 2: Configure o Banco de Dados
 
 1. Crie um banco de dados no MySQL:
 
-    ```sql
+    ```bash
     CREATE DATABASE loja_virtual;
     USE loja_virtual;
 
