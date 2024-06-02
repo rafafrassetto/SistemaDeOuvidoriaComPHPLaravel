@@ -1,8 +1,11 @@
 # Sistema E-Commerce com PHP
 
+
+# ⚠️⚠️ PROJETO EM DESENVOLVIMENTO ⚠️⚠️
+
 ## Descrição
 
-Este é um projeto de exemplo de um sistema de e-commerce simples desenvolvido utilizando apenas PHP e MySQL. A aplicação permite aos usuários visualizar produtos, adicionar produtos ao carrinho, realizar compras e aos administradores gerenciar os produtos e visa explorar a ferramenta PHP.
+Este é um projeto de exemplo de um sistema de e-commerce simples desenvolvido utilizando PHP, MySQL, Javascript, HTML e CSS. A aplicação permite aos usuários visualizar produtos, adicionar produtos ao carrinho, realizar compras e aos administradores gerenciar os produtos e visa explorar a ferramenta PHP.
 
 ## Funcionalidades
 
