@@ -5,127 +5,51 @@
 
 ## Descrição
 
-Este é um projeto de exemplo de um sistema de e-commerce simples desenvolvido utilizando PHP, MySQL, Javascript, HTML e CSS. A aplicação permite aos usuários visualizar produtos, adicionar produtos ao carrinho, realizar compras e aos administradores gerenciar os produtos e visa explorar a ferramenta PHP.
+Sistema de Ouvidoria Online desenvolvido em PHP, projetado para permitir que os cidadãos registrem reclamações, sugestões ou denúncias, facilitando a comunicação direta entre a população e a administração municipal. A plataforma visa melhorar a eficiência na resolução de problemas e aumentar a transparência e participação cidadã na gestão pública.
 
 ## Funcionalidades
 
-- Visualização de produtos
-- Adição de produtos ao carrinho de compras
-- Finalização de compras
-- Registro e login de usuários
-- Administração de produtos (adicionar, editar, remover)
+### 1. Página Inicial
+- Informações gerais sobre como usar a ouvidoria.
+- Opção para login/cadastro.
 
-## Requisitos
+### 2. Cadastro e Login
+- Formulário de cadastro com validação:
+  - Campos: nome completo, data de nascimento, e-mail, telefone, WhatsApp, senha e confirmação da senha, cidade e estado.
+  - Todos os campos são obrigatórios.
+  - A pessoa deve ter mais de 18 anos.
+  - Verificação de e-mail válido.
+  - Máscaras para números de telefone e WhatsApp.
+  - O estado seleciona as cidades disponíveis via carregamento dinâmico.
+  - Salvar dados no banco de dados com proteção contra SQL Injection.
+- Envio de código de validação para o e-mail cadastrado.
+- Login com criação de sessão em PHP.
 
-- Servidor Web (Apache ou Nginx)
-- PHP 7.4 ou superior
-- MySQL 5.7 ou superior
-- Composer (opcional para autoloading de dependências)
+### 3. Abertura de Ouvidoria
+- Somente após login.
+- Formulário para registro de nova ouvidoria:
+  - Campos: descrição do caso, tipo de serviço afetado, anexos (1 ou mais).
+  - Todos os campos são obrigatórios.
+  - Anexos salvos em base64 no banco de dados.
+- Validação do formulário com jQuery antes da submissão.
 
-## Instalação
+### 4. Listagem de Ouvidorias
+- Visualização de ouvidorias abertas pelo usuário logado.
 
-### Passo 1: Clone o Repositório
+### 5. Segurança
+- Proteção contra principais vulnerabilidades web (SQL Injection, XSS, etc.).
+- Senhas armazenadas de forma segura.
 
-```bash
-git clone https://github.com/rafafrassetto/Sistema_ECommerce_Com_PHP.git
-cd Sistema_ECommerce_Com_PHP
-```
-## Passo 2: Configure o Banco de Dados
+### 6. Documentação e Código
+- Código fonte bem organizado e comentado.
+- Documentação clara do projeto.
 
-1. Crie um banco de dados no MySQL:
+## Tecnologias Utilizadas
 
-    ```bash
-    CREATE DATABASE loja_virtual;
-    USE loja_virtual;
-
-    CREATE TABLE produtos (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        nome VARCHAR(100) NOT NULL,
-        descricao TEXT NOT NULL,
-        preco DECIMAL(10, 2) NOT NULL,
-        imagem VARCHAR(255) NOT NULL
-    );
-
-    CREATE TABLE usuarios (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        nome VARCHAR(100) NOT NULL,
-        email VARCHAR(100) NOT NULL UNIQUE,
-        senha VARCHAR(255) NOT NULL
-    );
-
-    CREATE TABLE pedidos (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        usuario_id INT NOT NULL,
-        total DECIMAL(10, 2) NOT NULL,
-        data DATETIME DEFAULT CURRENT_TIMESTAMP,
-        FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
-    );
-
-    CREATE TABLE pedido_itens (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        pedido_id INT NOT NULL,
-        produto_id INT NOT NULL,
-        quantidade INT NOT NULL,
-        preco DECIMAL(10, 2) NOT NULL,
-        FOREIGN KEY (pedido_id) REFERENCES pedidos(id),
-        FOREIGN KEY (produto_id) REFERENCES produtos(id)
-    );
-    ```
-
-2. Atualize as configurações do banco de dados no arquivo `includes/db.php`:
-
-    ```php
-    <?php
-    $host = 'localhost';
-    $db = 'loja_virtual';
-    $user = 'seu_usuario';
-    $pass = 'sua_senha';
-
-    try {
-        $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch (PDOException $e) {
-        die("Erro de conexão: " . $e->getMessage());
-    }
-    ?>
-    ```
-
-## Passo 3: Configuração do Servidor
-
-Certifique-se de que seu servidor web esteja configurado para servir arquivos PHP.
-
-Coloque os arquivos do projeto no diretório raiz do servidor (por exemplo, `/var/www/html` para Apache).
-
-## Passo 4: Iniciar o Projeto
-
-Abra seu navegador e acesse `http://localhost/Sistema_ECommerce_Com_PHP` para ver a loja virtual em funcionamento.
-
-## Uso
-
-### Página Inicial
-
-Acesse a página inicial para visualizar os produtos disponíveis.
-
-### Produto
-
-Clique em um produto para ver mais detalhes e adicioná-lo ao carrinho.
-
-### Carrinho de Compras
-
-Veja os produtos adicionados ao carrinho, altere a quantidade ou remova produtos.
-
-### Finalizar Compra
-
-Finalize a compra e veja a confirmação do pedido.
-
-### Área de Administração
-
-Acesse a área de administração para adicionar, editar ou remover produtos (implementar uma página de login para acessar essa área).
-
-
-**Estrutura de diretórios do  projeto:**
-
-![image](https://github.com/rafafrassetto/Sistema_ECommerce_Com_PHP/assets/88680818/0ac98247-41b3-40aa-b55e-a711904fbe81)
+- **Frontend:** Bootstrap, jQuery
+- **Backend:** PHP puro
+- **Database:** MySQL
+- **Controle de Versão:** GIT
 
 ## Contribuição
 
@@ -140,5 +64,3 @@ Este projeto está licenciado sob a MIT License.
 - Email: rafafrass@gmail.com
 - GitHub: [rafafrassetto](https://github.com/rafafrassetto)
 - LinkedIn: [Rafael Frassetto Pereira](https://www.linkedin.com/in/rafaelfrassettopereira/)
-
-
