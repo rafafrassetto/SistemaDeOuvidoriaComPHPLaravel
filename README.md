@@ -51,6 +51,7 @@ Sistema de Ouvidoria Online desenvolvido em PHP, projetado para permitir que os 
 - **Database:** MySQL
 - **Controle de Versão:** GIT
 
+Link para templates utilizados : https://getbootstrap.com/docs/5.3/examples/starter-template/
 ## Contribuição
 
 Contribuições são bem-vindas! Sinta-se à vontade para enviar pull requests ou abrir issues para reportar bugs e sugerir melhorias.
