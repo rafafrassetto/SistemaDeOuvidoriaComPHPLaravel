@@ -1,4 +1,4 @@
-# Sistema_DeOuvidoria_Com_PHP
+# Sistema De Ouvidoria Com PHP Laravel
 
 
 # ⚠️⚠️ PROJETO EM DESENVOLVIMENTO ⚠️⚠️
@@ -46,8 +46,9 @@ Sistema de Ouvidoria Online desenvolvido em PHP, projetado para permitir que os 
 
 ## Tecnologias Utilizadas
 
+- **Framework:** PHP Laravel
 - **Frontend:** Bootstrap, jQuery
-- **Backend:** PHP puro
+- **Backend:** PHP, Javascript
 - **Database:** MySQL
 - **Controle de Versão:** GIT
 
