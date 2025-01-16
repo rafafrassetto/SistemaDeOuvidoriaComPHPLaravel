@@ -1,0 +1,9 @@
+{
+    "rewrites": [
+      {
+        "source": "/",
+        "destination": "Pages/Home/index.html"
+      }
+    ]
+  }
+  
