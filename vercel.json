@@ -1,9 +1,8 @@
 {
-    "rewrites": [
-      {
-        "source": "/",
-        "destination": "Pages/Home/index.html"
-      }
-    ]
-  }
-  
+  "builds": [
+    {
+      "src": "app/package.json",
+      "use": "@vercel/node"
+    }
+  ]
+}
