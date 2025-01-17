@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -17,11 +18,12 @@ class AuthController extends Controller
         $user = DB::table('table_login')->where('email', $request->email)->first();
 
         if ($user && Hash::check($request->password, $user->password)) {
+            session(['user' => $user]);
             return redirect('/ouvidoria');
         }
 
         return back()->withErrors([
             'auth_error' => 'Email ou senha inválidos.',
-        ]);
+        ])->withInput();
     }
 }
