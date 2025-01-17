@@ -12,5 +12,5 @@ Route::post('/login', [AuthController::class, 'authenticate'])->name('login.auth
 
 
 Route::get('/ouvidoria', function () {
-    return redirect('/Pages/Ouvidoria/index.html');
+    return redirect()->to('/ouvidoria/index.html');
 });

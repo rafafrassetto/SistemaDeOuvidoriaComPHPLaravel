@@ -21,7 +21,7 @@ class AuthController extends Controller
 
      
         if ($user && Hash::check($request->password, $user->password)) {
-            return redirect('../index.html');
+            return redirect('ouvidoria');
         }
 
       
