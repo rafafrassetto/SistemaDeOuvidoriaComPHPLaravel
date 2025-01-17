@@ -11,38 +11,36 @@
       align-items: center;
       justify-content: center;
       height: 100vh;
-      background-color: #f8f9fa;
+      background-color: #ff0000;
       margin: 0;
     }
     .login-card {
       padding: 2rem;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
-      background-color: #fff;
+      background-color: #ff0000;
     }
     .form-control:focus {
       box-shadow: none;
-      border-color: #28a745;
+      border-color: #ff0000;
     }
     .btn-primary {
-      background-color: #28a745;
-      border-color: #28a745;
+      background-color: #ff0000;
+      border-color: #ff0000;
     }
   </style>
 </head>
 <body>
   <div class="login-card">
     <h3 class="mb-4 text-center">Login</h3>
-    <!--CSRF Token e método POST -->
-    <form action="/login" method="POST">
-      @csrf <!-- Token CSRF -->
+    <form action="#">
       <div class="mb-3">
         <label for="email" class="form-label">Email</label>
-        <input type="email" id="email" name="email" class="form-control" placeholder="Digite seu email" required>
+        <input type="email" id="email" class="form-control" placeholder="Digite seu email" required>
       </div>
       <div class="mb-3">
         <label for="password" class="form-label">Senha</label>
-        <input type="password" id="password" name="password" class="form-control" placeholder="Digite sua senha" required>
+        <input type="password" id="password" class="form-control" placeholder="Digite sua senha" required>
       </div>
       <button type="submit" class="btn btn-primary w-100">Entrar</button>
     </form>
