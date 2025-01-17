@@ -22,7 +22,7 @@ class AuthController extends Controller
 
         if ($response->successful()) {
             
-            return redirect('/ouvidoria');
+            return redirect('/public/Ouvidoria/index.html');
         }
 
         return back()->withErrors([
