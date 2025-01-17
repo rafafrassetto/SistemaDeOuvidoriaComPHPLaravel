@@ -2,7 +2,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -13,20 +14,14 @@ class AuthController extends Controller
             'password' => 'required',
         ]);
 
-        $response = Http::withHeaders([
-            'apikey' => env('SUPABASE_API_KEY'),
-            'Authorization' => 'Bearer ' . env('SUPABASE_API_KEY'),
-        ])->post(env('SUPABASE_URL') . '/rest/v1/users', [
-            'email' => $request->email,
-        ]);
+        $user = DB::table('table_login')->where('email', $request->email)->first();
 
-        if ($response->successful()) {
-            
-            return redirect('/public/Ouvidoria/index.html');
+        if ($user && Hash::check($request->password, $user->password)) {
+            return redirect('/ouvidoria');
         }
 
         return back()->withErrors([
-            'email' => 'Credenciais inválidas.',
+            'auth_error' => 'Email ou senha inválidos.',
         ]);
     }
 }
