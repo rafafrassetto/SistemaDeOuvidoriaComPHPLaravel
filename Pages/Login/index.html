@@ -28,17 +28,15 @@
       background-color: #28a745;
       border-color: #28a745;
     }
-    .error-message {
-      color: red;
-      margin-bottom: 10px;
-    }
   </style>
 </head>
 <body>
   <div class="login-card">
     <h3 class="mb-4 text-center">Login</h3>
-    @if($errors->has('auth_error'))
-      <div class="error-message">{{ $errors->first('auth_error') }}</div>
+    @if(session('auth_error'))
+      <div class="alert alert-danger">
+          {{ session('auth_error') }}
+      </div>
     @endif
     <form action="/login" method="POST">
       @csrf

@@ -7,10 +7,8 @@ Route::get('/', function () {
     return view('login');
 });
 
-
 Route::post('/login', [AuthController::class, 'authenticate'])->name('login.authenticate');
 
-
-Route::get('/ouvidoria', function () {
-    return redirect()->to('/ouvidoria/index.html');
+Route::middleware('auth')->get('/ouvidoria', function () {
+    return view('ouvidoria');
 });
