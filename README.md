@@ -1,66 +1,68 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Sistema De Ouvidoria Com PHP Laravel
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+# ⚠️⚠️ PROJETO EM DESENVOLVIMENTO ⚠️⚠️
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Descrição
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Sistema de Ouvidoria Online desenvolvido em PHP, projetado para permitir que os cidadãos registrem reclamações, sugestões ou denúncias, facilitando a comunicação direta entre a população e a administração municipal. A plataforma visa melhorar a eficiência na resolução de problemas e aumentar a transparência e participação cidadã na gestão pública.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Funcionalidades
 
-## Learning Laravel
+### 1. Página Inicial
+- Informações gerais sobre como usar a ouvidoria.
+- Opção para login/cadastro.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 2. Cadastro e Login
+- Formulário de cadastro com validação:
+  - Campos: nome completo, data de nascimento, e-mail, telefone, WhatsApp, senha e confirmação da senha, cidade e estado.
+  - Todos os campos são obrigatórios.
+  - A pessoa deve ter mais de 18 anos.
+  - Verificação de e-mail válido.
+  - Máscaras para números de telefone e WhatsApp.
+  - O estado seleciona as cidades disponíveis via carregamento dinâmico.
+  - Salvar dados no banco de dados com proteção contra SQL Injection.
+- Envio de código de validação para o e-mail cadastrado.
+- Login com criação de sessão em PHP.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 3. Abertura de Ouvidoria
+- Somente após login.
+- Formulário para registro de nova ouvidoria:
+  - Campos: descrição do caso, tipo de serviço afetado, anexos (1 ou mais).
+  - Todos os campos são obrigatórios.
+  - Anexos salvos em base64 no banco de dados.
+- Validação do formulário com jQuery antes da submissão.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 4. Listagem de Ouvidorias
+- Visualização de ouvidorias abertas pelo usuário logado.
 
-## Laravel Sponsors
+### 5. Segurança
+- Proteção contra principais vulnerabilidades web (SQL Injection, XSS, etc.).
+- Senhas armazenadas de forma segura.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 6. Documentação e Código
+- Código fonte bem organizado e comentado.
+- Documentação clara do projeto.
 
-### Premium Partners
+## Tecnologias Utilizadas
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+- **Framework:** PHP Laravel
+- **Frontend:** Bootstrap, jQuery
+- **Backend:** PHP, Javascript
+- **Database:** MySQL
+- **Controle de Versão:** GIT
 
-## Contributing
+Link para templates utilizados : https://getbootstrap.com/docs/5.3/examples/starter-template/
+## Contribuição
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Contribuições são bem-vindas! Sinta-se à vontade para enviar pull requests ou abrir issues para reportar bugs e sugerir melhorias.
 
-## Code of Conduct
+## Licença
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Este projeto está licenciado sob a MIT License.
 
-## Security Vulnerabilities
+## Contato
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- Email: rafafrass@gmail.com
+- GitHub: [rafafrassetto](https://github.com/rafafrassetto)
+- LinkedIn: [Rafael Frassetto Pereira](https://www.linkedin.com/in/rafaelfrassettopereira/)
